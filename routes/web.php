@@ -1,8 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\CompnyController;
+use App\Http\Controllers\API\AuthController;
+use App\Http\Controllers\API\CompnyController;
+
+use Illuminate\Support\Facades\Http;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,7 +17,9 @@ use App\Http\Controllers\CompnyController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $response = Http::get('http://127.0.0.1:8000/api/company',[]);
+    
+   // return view('welcome');
 });
 
 Route::controller(AuthController::class)->group(function () {

@@ -1,13 +1,15 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\DbCompany;
-class CompnyController extends Controller
+
+class CompanyController extends Controller
 {
-   public function __construct()
-   {
+ public function __construct()
+ {
     $this->middleware('auth:api');
 }
 public function index()
@@ -61,7 +63,7 @@ public function destroy($id)
 }
 public function update(Request $request, $id)
 {
-    
+
 
     $request->validate([
         'name' => 'required|string|max:255',
