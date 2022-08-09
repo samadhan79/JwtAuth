@@ -3,7 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\CompnyController;
+use App\Http\Controllers\CompanyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,7 +28,7 @@ Route::controller(AuthController::class)->group(function () {
 
 });
 
-Route::controller(CompnyController::class)->group(function () {
+Route::controller(CompanyController::class)->group(function () {
     Route::get('company', 'index');
     Route::post('company', 'store');
     Route::get('company/{id}', 'show');
